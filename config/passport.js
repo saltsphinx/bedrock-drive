@@ -1,4 +1,4 @@
-import ps, { use } from "passport";
+import ps from "passport";
 import LocalStrategy from "passport-local";
 import bcrypt from "bcryptjs";
 import { PrismaClient } from "@prisma/client";
