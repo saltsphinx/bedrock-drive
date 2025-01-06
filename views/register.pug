@@ -1,0 +1,19 @@
+extends index
+
+block title
+  title Bedrock - Register
+
+block content
+  h1 Register
+  form(action="/register" method="POST" id="form")
+    div
+      label(for="username") Username
+      input(type="text" id="username" name="username")
+    div
+      label(for="password") Password
+      input(type="password" id="password" name="password")
+    div
+      label(for="confirm-password") Confirm Password
+      input(type="password" id="confirm-password" name="confirm-password")
+    p Already have an account? #[a(href="/signin") Sign in]
+    button(form="form" type="submit") Register
