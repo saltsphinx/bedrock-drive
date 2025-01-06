@@ -16,6 +16,7 @@ const app = express();
 app.set("views", path.join(process.cwd(), "views"));
 app.set("view engine", "pug");
 
+app.use(express.static("./public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(session);
 app.use(passport.session());
@@ -28,8 +29,8 @@ app.use((req, res, next) => {
 
 app.get("/", (req, res) => res.render("index"));
 
+app.use("/", sessionRouter);
 app.use("/", signinRouter);
 app.use("/", registerRouter);
-app.use("/", sessionRouter);
 
 app.listen(process.env.PORT);

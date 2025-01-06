@@ -4,5 +4,5 @@ export default function isntLoggedin(req, res, next) {
     return res.redirect("/");
   }
 
-  next();
+  next("");
 }
