@@ -4,7 +4,7 @@ import passport from "../config/passport.js";
 const sessionRouter = Router();
 
 sessionRouter.post(
-  "/session",
+  "/",
   passport.authenticate("local", {
     successRedirect: "/",
     failureRedirect: "/signin",
@@ -13,6 +13,6 @@ sessionRouter.post(
   })
 );
 
-sessionRouter.delete("/session", deleteSession);
+sessionRouter.delete("/", deleteSession);
 
 export default sessionRouter;

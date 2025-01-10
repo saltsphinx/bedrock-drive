@@ -1,4 +1,4 @@
-export default function isntLoggedin(req, res, next) {
+export default function notAuthenticated(req, res, next) {
   if (req.isAuthenticated()) {
     req.flash("messages", "Already signed in.");
     return res.redirect("/");

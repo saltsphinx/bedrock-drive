@@ -1,7 +1,14 @@
 script(src="scripts/signout.js" defer) 
 
 header
-  a Bedrock Drive
+  a
+    h2 Bedrock Drive
   ul
-    li
-      a(href="javascript:void(0)" onclick="signout()")  Logout
+    if currentUser
+      li
+        a.signout-btn(href="javascript:void(0)") Sign out
+    else
+      li
+        a(href="/signin") Sign in
+      li
+        a(href="/register") Register
